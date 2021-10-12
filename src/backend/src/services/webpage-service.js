@@ -29,6 +29,13 @@ module.exports = {
                     .replace('\n', '')
                     .replace('\n', '')
                     .replace('\n', '')
+                    .replace('\n', '')
+                    .replace('\n', '')
+                    .replace('\n', ''),
+                  link: `https://seminovos.com.br${$(element)
+                    .find('.value')
+                    .find('a')
+                    .attr('href')}`
                 });
               });
 

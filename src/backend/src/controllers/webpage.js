@@ -1,4 +1,4 @@
-const { getAdvertisements } = require('../services/webpage');
+const { getAdvertisements } = require('../services/webpage-service');
 const { createUrl } = require('../utils/index');
 module.exports = {
   async findAdvertising(req, res) {
@@ -7,7 +7,7 @@ module.exports = {
         throw new Error('Bad request');
       }
 
-      const URL_CLIENT = 'https://seminovos.com.br/';
+      const URL_CLIENT = 'https://seminovos.com.br';
 
       const url = createUrl(URL_CLIENT, req.query);
 

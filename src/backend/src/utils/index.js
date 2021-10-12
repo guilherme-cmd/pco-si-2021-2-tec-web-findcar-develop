@@ -10,6 +10,6 @@ module.exports = {
       page
     } = params;
 
-    return `${url}carro/${brand}/${model}/ano-${initialYear}-${finalYear}/preco-${initialPrice}-${finalPrice}?page=${page}&ajax`;
+    return `${url}/carro/${brand}/${model}/ano-${initialYear}-${finalYear}/preco-${initialPrice}-${finalPrice}?page=${page}&ajax`;
   }
 };
