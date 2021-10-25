@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "jest src/__tests__/** --watch-all",
-    "dev": "nodemon src/server.js",
-    "start": "node src/server.js"
+    "dev": "nodemon server.js",
+    "start": "node server.js"
   },
   "author": "Daniel Braz, Eduardo Ferreira, Nivaldo Marçal & Erick Leal",
   "type": "commonjs",
