@@ -27,7 +27,7 @@ $(document).ready(function () {
           return
         }
       }
-
+	}
       const request = JSON.stringify({
         'brand': brand,
         'color': color,
@@ -36,7 +36,7 @@ $(document).ready(function () {
         'km': km,
         'state': state
       })
-
+	  console.log(request);
       fetch('localhost:3000/api/findcar', request)
 
       // create request
@@ -74,6 +74,6 @@ $(document).ready(function () {
       //       }
       //     }
       //   })
-    }
+    
   })
 })
