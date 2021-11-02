@@ -16,6 +16,7 @@ $(document).ready(function () {
       alert('Necessário informar a marca do veiculo.', 'error')
       return
     }
+    console.log('teste22')
 
     if (finalYear != 'Até') {
       // verify anos
@@ -27,53 +28,72 @@ $(document).ready(function () {
           return
         }
       }
-	}
-      const request = JSON.stringify({
-        'brand': brand,
-        'color': color,
-        'initialYear': initialYear,
-        'finalYear': finalYear,
-        'km': km,
-        'state': state
+    }
+    const request = JSON.stringify({
+      'brand': brand,
+      'color': color,
+      'initialYear': initialYear,
+      'finalYear': finalYear,
+      'km': km,
+      'state': state
+    })
+
+    const myHeaders = new Headers()
+    myHeaders.append('Content-Type', 'application/json')
+
+    // `http://localhost:3000/api/findcar?brand=${brand}?initialYear=${initialYear}?finalYear=${finalYear}?initialPrice=${initialPrice}?finalPrice=${finalPrice}?page=${page}`,
+    fetch(`http://localhost:3000/api/findcar?brand=${brand}`, {
+      method: 'GET'
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data)
+        const { advertisements } = data
+        const res = document.body.querySelector('#resultado') // div p alter
+        res.innerHTML = ''
+        let countItems = 0
+        let htmlAd = ''
+        advertisements.forEach((item) => {
+          if (countItems < 3) {
+            htmlAd += `
+            <div class="col card">
+            <a href=${item.link} target="_blank">
+            <img src="${item.img}"/>
+            </a>
+            <h1>${item.title}</h1>
+            <p>${item.description}</p>
+            <h1>${item.value}</h1>
+            <a href=${item.link} target="_blank">Ver anúncio</a>
+            </div>
+            `
+          } else {
+            res.innerHTML += `
+            <div class="row ad">
+            ${htmlAd}
+            </div>
+            `
+            countItems = 0
+            htmlAd = ''
+            return
+          }
+          countItems++
+        })
+
+        // const keys = Object.keys(data)
+        // console.log(keys)
+
+        // for (key in keys) {
+        //   const t = data[keys[key]].length
+        //   for (const i = 0; i < t; i++) {
+        //     res.innerHTML += data[keys[key]][i].brand + ' '
+        //     res.innerHTML += data[keys[key]][i].ano + ' '
+        //     res.innerHTML += data[keys[key]][i].cambio + ' '
+        //     res.innerHTML += data[keys[key]][i].combustivel + ' '
+        //     res.innerHTML += data[keys[key]][i].color + ' '
+        //     res.innerHTML += data[keys[key]][i].km + ' '
+        //     res.innerHTML += data[keys[key]][i].portas + '<br>'
+        //   }
+        // }
       })
-	  console.log(request);
-      fetch('localhost:3000/api/findcar', request)
-
-      // create request
-
-      // return data to frontend
-
-      // create ad card
-
-      // $.ajax({ // mandar objeto json por url
-      // type: "POST",
-      // data: objectAtiv,
-      // url: "../ngrok/save",
-      // contentType: "application/json"
-      // }).done(function(msg) {
-      // console.log(msg);
-      // //recebendo retorno
-      // });
-
-      //   $.getJSON('https://my-json-server.typicode.com/ErickLeal/apiFindCar/db', function (result) {
-      //     console.log(result)
-      //     const res = document.body.querySelector('#resultado') // div p alter
-      //     res.innerHTML = ''
-      //     const keys = Object.keys(result)
-
-      //     for (key in keys) {
-      //       const t = result[keys[key]].length
-      //       for (const i = 0; i < t; i++) {
-      //         res.innerHTML += result[keys[key]][i].brand + ' '
-      //         res.innerHTML += result[keys[key]][i].ano + ' '
-      //         res.innerHTML += result[keys[key]][i].cambio + ' '
-      //         res.innerHTML += result[keys[key]][i].combustivel + ' '
-      //         res.innerHTML += result[keys[key]][i].color + ' '
-      //         res.innerHTML += result[keys[key]][i].km + ' '
-      //         res.innerHTML += result[keys[key]][i].portas + '<br>'
-      //       }
-      //     }
-      //   })
-    
   })
 })
