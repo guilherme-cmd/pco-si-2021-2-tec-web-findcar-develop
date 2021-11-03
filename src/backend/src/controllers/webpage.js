@@ -10,6 +10,7 @@ module.exports = {
       const URL_CLIENT = 'https://seminovos.com.br';
 
       const url = createUrl(URL_CLIENT, req.query);
+      console.log({ url });
 
       const advertisements = await getAdvertisements(url);
 

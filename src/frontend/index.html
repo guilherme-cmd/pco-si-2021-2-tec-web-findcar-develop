@@ -31,7 +31,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
    </head>
    <!-- body -->
-   <body class="main-layout">
+   <body class="main-layout containerss">
       <!-- loader  -->
       <div class="loader_bg">
          <div class="loader"><img src="images/loading.gif" alt="#" /></div>
@@ -103,21 +103,7 @@
 					  <option value="BMW">BMW  </option>
 					  <option value="FIAT">FIAT  </option>		
 					</select>
-					
-					<label>Cor : </label>
-					<select id="color" class="custom-select" aria-label=".form-select-lg example">
-					  <option selected>Cor</option>
-					  <option value="Preto">Preto</option>
-					  <option value="Branco">Branco</option>
-					  <option value="Prata">Prata</option>
-					  <option value="Vermelho">Vermelho</option>
-					  <option value="Cinza">Cinza  </option>
-					  <option value="Amarelo">Amarelo </option>
-					  <option value="Verde">Verde  </option>
-					  <option value="Azul">Azul  </option>
-					  <option value="Rosa">Rosa  </option>
-					</select>
-				
+									
 					<label>Ano : </label>
 					<select id="initialYear" class="custom-select" aria-label=".form-select-lg example">
 					  <option selected>De</option>
@@ -172,47 +158,37 @@
 					  <option value="2020">2020</option>
 					  <option value="2021">2021</option>
 					</select>
+
+					<label>Preço: </label>
+					<select id="initialPrice" class="custom-select" aria-label=".form-select-lg example">
+					  <option selected>De</option>
+					  <option value="5000">5000</option>
+					  <option value="10000">10000</option>
+					  <option value="20000">20.000</option>
+					  <option value="30000">30.000</option>
+					  <option value="40000">40000</option>
+					  <option value="50000">50000</option>
+					  <option value="60000">60000</option>
+					  <option value="70000">70000</option>
+					  <option value="80000">80000</option>
+					  <option value="90000">90000</option>
+					  <option value="100000">100000</option>					
+					</select>
 				
-					<label>KM : </label>
-					<select id="km" class="custom-select" aria-label=".form-select-lg example">
-					  <option selected>Selecione</option>
-					  <option value="Até 10.000">Até 10.000</option>
-					  <option value="Até 30.000">Até 30.000</option>
-					  <option value="Até 50.000">Até 50.000</option>
-					  <option value="Acima de 50.000">Acima de 50.000</option>
-					</select>
-					
-					<label>Estado : </label>
-					<select id="state" class="custom-select" aria-label=".form-select-lg example">
-						<option selected>Selecione</option>
-						<option value="AC">AC</option>
-						<option value="AL">AL</option>
-						<option value="AP">AP</option>
-						<option value="AM">AM</option>
-						<option value="BA">BA</option>
-						<option value="CE">CE</option>
-						<option value="DF">DF</option>
-						<option value="ES">ES</option>
-						<option value="GO">GO</option>
-						<option value="MA">MA</option>
-						<option value="MS">MS</option>
-						<option value="MT">MT</option>
-						<option value="MG">MG</option>
-						<option value="PA">PA</option>
-						<option value="PB">PB</option>
-						<option value="PR">PR</option>
-						<option value="PE">PE</option>
-						<option value="PI">PI</option>
-						<option value="RJ">RJ</option>
-						<option value="RN">RN</option>
-						<option value="RS">RS</option>
-						<option value="RO">RO</option>
-						<option value="RR">RR</option>
-						<option value="SC">SC</option>
-						<option value="SP">SP</option>
-						<option value="SE">SE</option>
-						<option value="TO">TO</option>
-					</select>
+					<select id="finalPrice"class="custom-select" aria-label=".form-select-lg example">
+					  <option selected>Até</option>
+					  <option value="5000">5000</option>
+					  <option value="10000">10000</option>
+					  <option value="20000">20000</option>
+					  <option value="30000">30000</option>
+					  <option value="40000">40000</option>
+					  <option value="50000">50000</option>
+					  <option value="60000">60000</option>
+					  <option value="70000">70000</option>
+					  <option value="80000">80000</option>
+					  <option value="90000">90000</option>
+					  <option value="100000">100000</option>
+					</select>								
 					
 					
 					<button value="Submit" type="submit" class="btn btn-info">
@@ -223,13 +199,25 @@
             </div>
         </fieldset>
 	</div>
-   <div id="resultado"> 
+   <div id="result"> 
    </div>
   
       <footer>
-         <div class="footer">
-         
-            <div class="copyright">
+		  
+		  <div class="footer">	 
+			<nav aria-label="Page navigation">
+				<ul id="page" class="pagination">
+				  <li class="page-item"><a class="page-link" value="Previous" >Previous</a></li>
+				  <li class="page-item"><a class="page-link" value="1" href="#1">1</a></li>
+				  <li class="page-item"><a class="page-link" value="2" href="#2">2</a></li>
+				  <li class="page-item"><a class="page-link" value="3" href="#3">3</a></li>
+				  <li class="page-item"><a class="page-link" value="4" href="#4">4</a></li>
+				  <li class="page-item"><a class="page-link" value="5" href="#5">5</a></li>
+				  <li class="page-item"><a class="page-link" value="Next" >Next</a></li>
+				</ul>
+			  </nav>
+
+			 <div class="copyright">
                <div class="container">
                   <div class="row">
                      <div class="col-md-12">

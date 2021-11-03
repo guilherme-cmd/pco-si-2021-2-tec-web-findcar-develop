@@ -838,6 +838,17 @@ button {
   text-transform: uppercase;
 }
 
+#result {
+  min-height: 370px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+}
+
 .copyright {
   margin-top: 43px;
   padding: 20px 0px;
