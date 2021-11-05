@@ -1,5 +1,5 @@
 addEventListener('load', () => {
-  console.log('deu bom')
+  //console.log('deu bom')
   getAdvertisements({ brand: 'Hyundai', initialYear: '', finalYear: '', initialPrice: '', finalPrice: '', page: 0 })
 })
 
@@ -98,9 +98,9 @@ function getAdvertisements(request) {
       advertisements.forEach((item) => {
         if (countItems < 3) {
           htmlAd += `
-         <div class="col card">
+         <div class="col card shrink">
          <a href=${item.link} target="_blank">
-         <img src="${item.img}"/>
+         <img src="${item.img}"  onerror="this.src='images/nd.png'"/>
          </a>
          <h1>${item.title}</h1>
          <p>${item.description}</p>
