@@ -745,6 +745,12 @@ button {
   background: #fff;
   margin: 0px 40px;
 }
+.shrink:hover
+{
+        -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+        transform: scale(0.8);
+}
 
 .cross_layout {
   transform: skew(-20deg);
